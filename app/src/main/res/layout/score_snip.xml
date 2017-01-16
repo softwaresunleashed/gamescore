@@ -1,0 +1,64 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scorecard"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_playerscore"
+        android:background="@drawable/textview_states"
+        android:gravity="center"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <view
+        android:layout_width="0dp"
+        android:layout_height="@dimen/md_16dp_margin" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:text="+"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_add"
+            android:background="@drawable/border_oval"
+            android:layout_weight="1"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:layout_marginLeft="@dimen/md_40dp_margin"
+            android:layout_marginRight="@dimen/md_40dp_margin"
+            android:textSize="36sp" />
+
+        <view
+            android:layout_width="@dimen/md_75dp_margin"
+            android:layout_height="@dimen/md_6dp_margin" />
+
+
+        <TextView
+            android:text="-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_sub"
+            android:background="@drawable/border_oval"
+            android:layout_weight="1"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:layout_marginLeft="@dimen/md_40dp_margin"
+            android:layout_marginRight="@dimen/md_40dp_margin"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
