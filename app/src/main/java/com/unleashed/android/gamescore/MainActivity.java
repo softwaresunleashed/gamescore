@@ -13,19 +13,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try{
+            setContentView(R.layout.activity_main);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         initHandle();
     }
 
     private void initHandle() {
-        scorecard_player1 = (LinearLayout) findViewById(R.id.player1);
-        scorecard_player1.findViewById(R.id.tv_add).setOnClickListener(this);
-        scorecard_player1.findViewById(R.id.tv_sub).setOnClickListener(this);
-
-        scorecard_player2 = (LinearLayout) findViewById(R.id.player2);
-        scorecard_player2.findViewById(R.id.tv_add).setOnClickListener(this);
-        scorecard_player2.findViewById(R.id.tv_sub).setOnClickListener(this);
+//        scorecard_player1 = (LinearLayout) findViewById(R.id.player1);
+//        scorecard_player1.findViewById(R.id.tv_add).setOnClickListener(this);
+//        scorecard_player1.findViewById(R.id.tv_sub).setOnClickListener(this);
+//
+//        scorecard_player2 = (LinearLayout) findViewById(R.id.player2);
+//        scorecard_player2.findViewById(R.id.tv_add).setOnClickListener(this);
+//        scorecard_player2.findViewById(R.id.tv_sub).setOnClickListener(this);
 
 
     }

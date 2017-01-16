@@ -19,7 +19,7 @@
         android:textAlignment="center"
         android:textSize="36sp" />
 
-    <view
+    <View
         android:layout_width="0dp"
         android:layout_height="@dimen/md_16dp_margin" />
 
@@ -42,7 +42,7 @@
             android:layout_marginRight="@dimen/md_280dp_margin"
             android:textSize="36sp" />
 
-        <view
+        <View
             android:layout_width="@dimen/md_75dp_margin"
             android:layout_height="@dimen/md_6dp_margin" />
 
@@ -61,6 +61,4 @@
             android:textSize="36sp" />
 
     </LinearLayout>
-
-
 </LinearLayout>
