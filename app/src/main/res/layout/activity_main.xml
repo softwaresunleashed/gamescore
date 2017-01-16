@@ -8,18 +8,14 @@
     android:orientation="horizontal"
     android:weightSum="2"
     tools:context="com.unleashed.android.gamescore.MainActivity">
-
-
-
     <include
         android:id="@+id/player1"
         layout="@layout/score_snip" />
-
-
-
+    <view
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"/>
     <include
         android:id="@+id/player2"
         layout="@layout/score_snip" />
-
-
 </LinearLayout>
