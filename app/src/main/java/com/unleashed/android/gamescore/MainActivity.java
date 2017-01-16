@@ -2,13 +2,12 @@ package com.unleashed.android.gamescore;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
-    LinearLayout scorecard_player1;
-    LinearLayout scorecard_player2;
+    PlayerScoreCard scorecard_player1;
+    PlayerScoreCard scorecard_player2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,33 +15,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
+        PlayerScoreCard scorecard_player1 = new PlayerScoreCard(this, 1);
+        PlayerScoreCard scorecard_player2 = new PlayerScoreCard(this, 2);
 
-        initHandle();
+        LinearLayout myRoot = (LinearLayout) findViewById(R.id.activity_main_root_id);
+
+        myRoot.addView(scorecard_player1);
+        myRoot.addView(scorecard_player2);
+
+
+        //initHandle();
     }
 
-    private void initHandle() {
-        scorecard_player1 = (LinearLayout) findViewById(R.id.player1);
-        scorecard_player1.findViewById(R.id.tv_add).setOnClickListener(this);
-        scorecard_player1.findViewById(R.id.tv_sub).setOnClickListener(this);
+//    private void initHandle() {
+//        scorecard_player1 = (LinearLayout) findViewById(R.id.player1);
+//        scorecard_player1.findViewById(R.id.tv_add).setOnClickListener(this);
+//        scorecard_player1.findViewById(R.id.tv_sub).setOnClickListener(this);
+//
+//        scorecard_player2 = (LinearLayout) findViewById(R.id.player2);
+//        scorecard_player2.findViewById(R.id.tv_add).setOnClickListener(this);
+//        scorecard_player2.findViewById(R.id.tv_sub).setOnClickListener(this);
+//
+//
+//    }
 
-        scorecard_player2 = (LinearLayout) findViewById(R.id.player2);
-        scorecard_player2.findViewById(R.id.tv_add).setOnClickListener(this);
-        scorecard_player2.findViewById(R.id.tv_sub).setOnClickListener(this);
 
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()){
-            case R.id.tv_add:
-                break;
-
-            case R.id.tv_sub:
-
-                break;
-        }
-
-    }
 }

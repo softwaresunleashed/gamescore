@@ -27,6 +27,7 @@
         android:gravity="center"
         android:textStyle="normal|bold"
         android:textAlignment="center"
+        android:layout_marginTop="5dp"
         android:textSize="36sp" />
 
     <View

@@ -2,23 +2,23 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_main_root_id"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:weightSum="2"
     tools:context="com.unleashed.android.gamescore.MainActivity">
 
-    <include
-        android:id="@+id/player1"
-        layout="@layout/score_snip" />
+    <!--<include-->
+        <!--android:id="@+id/player1"-->
+        <!--layout="@layout/score_snip" />-->
 
-    <View
-        android:layout_width="30dp"
-        android:layout_height="0dp"
-        android:visibility="invisible"/>
+    <!--<View-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:visibility="invisible"/>-->
 
-    <include
-        android:id="@+id/player2"
-        layout="@layout/score_snip" />
+    <!--<include-->
+        <!--android:id="@+id/player2"-->
+        <!--layout="@layout/score_snip" />-->
 </LinearLayout>
