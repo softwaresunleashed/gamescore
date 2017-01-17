@@ -9,16 +9,7 @@
     android:weightSum="2"
     tools:context="com.unleashed.android.gamescore.MainActivity">
 
-    <!--<include-->
-        <!--android:id="@+id/player1"-->
-        <!--layout="@layout/score_snip" />-->
 
-    <!--<View-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:visibility="invisible"/>-->
+    <!--Add player score card programmatically-->
 
-    <!--<include-->
-        <!--android:id="@+id/player2"-->
-        <!--layout="@layout/score_snip" />-->
 </LinearLayout>

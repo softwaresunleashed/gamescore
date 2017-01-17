@@ -1,6 +1,7 @@
 package com.unleashed.android.gamescore;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,17 +11,25 @@ import android.widget.TextView;
 
 public class PlayerScoreCard extends View implements View.OnClickListener {
 
-    int mPlayerId;
+    View rootLayout;
+    TextView tvAdd;
+    TextView tvSub;
 
-    public PlayerScoreCard(Context context, int playerId) {
+    public PlayerScoreCard(Context context) {
         super(context);
 
-        this.mPlayerId = playerId;
+        rootLayout = LayoutInflater.from(context).inflate(R.layout.score_snip, null);
+        tvAdd = (TextView) rootLayout.findViewById(R.id.tv_add);
+        tvSub = (TextView) rootLayout.findViewById(R.id.tv_sub);
+
+        tvAdd.setOnClickListener(this);
+        tvSub.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        TextView ps = (TextView) v.getRootView().findViewById(R.id.tv_playerscore);
+        TextView ps = (TextView) rootLayout.findViewById(R.id.tv_playerscore);
         Integer newvalue = 0;
 
         switch (v.getId()){

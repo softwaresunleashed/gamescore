@@ -15,29 +15,17 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
 
-        PlayerScoreCard scorecard_player1 = new PlayerScoreCard(this, 1);
-        PlayerScoreCard scorecard_player2 = new PlayerScoreCard(this, 2);
-
         LinearLayout myRoot = (LinearLayout) findViewById(R.id.activity_main_root_id);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        //myRoot.setLayoutParams(lp);
+
+        PlayerScoreCard scorecard_player1 = new PlayerScoreCard(this);
+        PlayerScoreCard scorecard_player2 = new PlayerScoreCard(this);
 
         myRoot.addView(scorecard_player1);
         myRoot.addView(scorecard_player2);
 
 
-        //initHandle();
     }
-
-//    private void initHandle() {
-//        scorecard_player1 = (LinearLayout) findViewById(R.id.player1);
-//        scorecard_player1.findViewById(R.id.tv_add).setOnClickListener(this);
-//        scorecard_player1.findViewById(R.id.tv_sub).setOnClickListener(this);
-//
-//        scorecard_player2 = (LinearLayout) findViewById(R.id.player2);
-//        scorecard_player2.findViewById(R.id.tv_add).setOnClickListener(this);
-//        scorecard_player2.findViewById(R.id.tv_sub).setOnClickListener(this);
-//
-//
-//    }
-
 
 }
