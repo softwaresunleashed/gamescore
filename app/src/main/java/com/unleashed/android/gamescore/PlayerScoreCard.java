@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.xenione.digit.TabDigit;
 
 import info.hoang8f.widget.FButton;
@@ -90,6 +92,10 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
         if(scoreUpdateListener != null){
             scoreUpdateListener.onScoreUpdate();
         }
+
+        // Add Animation library
+        YoYo.with(Techniques.Wobble).duration(700).playOn(score_zeros);
+        YoYo.with(Techniques.Wobble).duration(700).playOn(score_ones);
     }
 
     public String getCurrentScore(){
