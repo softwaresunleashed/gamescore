@@ -40,36 +40,39 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-        <TextView
+        <info.hoang8f.widget.FButton
+            xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+            fbutton:buttonColor="#2ECC71"
+            fbutton:shadowColor="#27AE60"
             android:text="+"
+            android:id="@+id/tv_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_add"
-            android:background="@drawable/btn_alpha_black_selector"
             android:layout_weight="1"
-            android:textStyle="normal|bold"
-            android:textAlignment="center"
             android:paddingLeft="@dimen/md_4dp_margin"
             android:paddingRight="@dimen/md_4dp_margin"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            />
 
         <View
             android:layout_width="@dimen/md_10dp_margin"
             android:layout_height="@dimen/md_6dp_margin" />
 
-
-        <TextView
+        <info.hoang8f.widget.FButton
+            xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+            fbutton:buttonColor="#E74C3C"
+            fbutton:shadowColor="#C0392B"
             android:text="-"
+            android:id="@+id/tv_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_sub"
-            android:background="@drawable/btn_alpha_black_selector"
             android:layout_weight="1"
-            android:textStyle="normal|bold"
-            android:textAlignment="center"
             android:paddingLeft="@dimen/md_4dp_margin"
             android:paddingRight="@dimen/md_4dp_margin"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            />
+
+
 
     </LinearLayout>
 </LinearLayout>

@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity{
         myRoot.addView(scorecard_player2.getRootLayout());
 
 
-
     }
 
 }

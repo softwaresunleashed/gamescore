@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import info.hoang8f.widget.FButton;
+
 /**
  * Created by sudhanshu on 16/01/17.
  */
@@ -12,15 +14,15 @@ import android.widget.TextView;
 public class PlayerScoreCard extends View implements View.OnClickListener {
 
     View rootLayout;
-    TextView tvAdd;
-    TextView tvSub;
+    FButton tvAdd;
+    FButton tvSub;
 
     public PlayerScoreCard(Context context) {
         super(context);
 
         rootLayout = LayoutInflater.from(context).inflate(R.layout.score_snip, null).getRootView();
-        tvAdd = (TextView) rootLayout.findViewById(R.id.tv_add);
-        tvSub = (TextView) rootLayout.findViewById(R.id.tv_sub);
+        tvAdd = (FButton) rootLayout.findViewById(R.id.tv_add);
+        tvSub = (FButton) rootLayout.findViewById(R.id.tv_sub);
 
         tvAdd.setOnClickListener(this);
         tvSub.setOnClickListener(this);
