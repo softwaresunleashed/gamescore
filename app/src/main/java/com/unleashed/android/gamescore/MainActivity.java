@@ -9,6 +9,8 @@ public class MainActivity extends AppCompatActivity{
     PlayerScoreCard scorecard_player1;
     PlayerScoreCard scorecard_player2;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,14 +18,14 @@ public class MainActivity extends AppCompatActivity{
 
 
         LinearLayout myRoot = (LinearLayout) findViewById(R.id.activity_main_root_id);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        //myRoot.setLayoutParams(lp);
 
-        PlayerScoreCard scorecard_player1 = new PlayerScoreCard(this);
-        PlayerScoreCard scorecard_player2 = new PlayerScoreCard(this);
 
-        myRoot.addView(scorecard_player1);
-        myRoot.addView(scorecard_player2);
+        scorecard_player1 = new PlayerScoreCard(this);
+        scorecard_player2 = new PlayerScoreCard(this);
+
+        myRoot.addView(scorecard_player1.getRootLayout());
+        myRoot.addView(scorecard_player2.getRootLayout());
+
 
 
     }

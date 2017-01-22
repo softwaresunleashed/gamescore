@@ -18,13 +18,18 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
     public PlayerScoreCard(Context context) {
         super(context);
 
-        rootLayout = LayoutInflater.from(context).inflate(R.layout.score_snip, null);
+        rootLayout = LayoutInflater.from(context).inflate(R.layout.score_snip, null).getRootView();
         tvAdd = (TextView) rootLayout.findViewById(R.id.tv_add);
         tvSub = (TextView) rootLayout.findViewById(R.id.tv_sub);
 
         tvAdd.setOnClickListener(this);
         tvSub.setOnClickListener(this);
 
+    }
+
+
+    public View getRootLayout(){
+        return rootLayout;
     }
 
     @Override
