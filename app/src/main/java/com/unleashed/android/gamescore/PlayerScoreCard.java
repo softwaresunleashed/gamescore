@@ -1,8 +1,10 @@
 package com.unleashed.android.gamescore;
 
 import android.content.Context;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 
 import com.xenione.digit.TabDigit;
 
@@ -17,11 +19,23 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
     View rootLayout;
     FButton tvAdd;
     FButton tvSub;
+    EditText playerName;
 
     TabDigit score_zeros;
     TabDigit score_ones;
 
     int currentValue;
+
+    private TextToSpeech tts;
+
+    OnScoreUpdate scoreUpdateListener;
+    public interface OnScoreUpdate{
+      void onScoreUpdate();
+    };
+
+    public void setScoreUpdateListener(OnScoreUpdate scoreUpdateListener){
+        this.scoreUpdateListener = scoreUpdateListener;
+    }
 
     public PlayerScoreCard(Context context) {
         super(context);
@@ -29,6 +43,7 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
         rootLayout = LayoutInflater.from(context).inflate(R.layout.score_snip, null).getRootView();
         tvAdd = (FButton) rootLayout.findViewById(R.id.tv_add);
         tvSub = (FButton) rootLayout.findViewById(R.id.tv_sub);
+        playerName = (EditText) rootLayout.findViewById(R.id.et_playername);
 
         tvAdd.setOnClickListener(this);
         tvSub.setOnClickListener(this);
@@ -68,7 +83,22 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
     }
 
     private void updatePlayerScoreCard(int currentValue) {
+
         score_zeros.setChar(currentValue % 10);
         score_ones.setChar(currentValue / 10);
+
+        if(scoreUpdateListener != null){
+            scoreUpdateListener.onScoreUpdate();
+        }
     }
+
+    public String getCurrentScore(){
+        return String.valueOf(currentValue);
+    }
+
+    public String getPlayerName(){
+        return playerName.getText().toString();
+    }
+
+
 }
