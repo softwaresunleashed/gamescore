@@ -3,7 +3,8 @@ package com.unleashed.android.gamescore;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+
+import com.xenione.digit.TabDigit;
 
 import info.hoang8f.widget.FButton;
 
@@ -17,6 +18,11 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
     FButton tvAdd;
     FButton tvSub;
 
+    TabDigit score_zeros;
+    TabDigit score_ones;
+
+    int currentValue;
+
     public PlayerScoreCard(Context context) {
         super(context);
 
@@ -27,6 +33,13 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
         tvAdd.setOnClickListener(this);
         tvSub.setOnClickListener(this);
 
+        score_zeros = (TabDigit) rootLayout.findViewById(R.id.tabDigit_zeros);
+        score_ones = (TabDigit) rootLayout.findViewById(R.id.tabDigit_ones);
+
+        score_zeros.setChar(0);
+        score_ones.setChar(0);
+
+        currentValue = 0;
     }
 
 
@@ -36,22 +49,26 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        TextView ps = (TextView) rootLayout.findViewById(R.id.tv_playerscore);
-        Integer newvalue = 0;
+
 
         switch (v.getId()){
             case R.id.tv_add:
-                newvalue = Integer.parseInt(ps.getText().toString()) + 1;
+                currentValue++;
                 break;
 
             case R.id.tv_sub:
-                newvalue = Integer.parseInt(ps.getText().toString()) - 1;
-                if(newvalue < 0)
-                    newvalue = 0;
+                currentValue--;
+                if(currentValue < 0)
+                    currentValue = 0;
                 break;
         }
 
-        ps.setText(String.valueOf(newvalue));
+        updatePlayerScoreCard(currentValue);
 
+    }
+
+    private void updatePlayerScoreCard(int currentValue) {
+        score_zeros.setChar(currentValue % 10);
+        score_ones.setChar(currentValue / 10);
     }
 }
