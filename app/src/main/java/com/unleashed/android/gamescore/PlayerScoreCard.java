@@ -44,6 +44,8 @@ public class PlayerScoreCard extends View implements View.OnClickListener {
 
             case R.id.tv_sub:
                 newvalue = Integer.parseInt(ps.getText().toString()) - 1;
+                if(newvalue < 0)
+                    newvalue = 0;
                 break;
         }
 
