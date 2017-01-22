@@ -18,6 +18,45 @@
         android:hint="Enter Player Name"
         android:id="@+id/et_playername" />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <com.xenione.digit.TabDigit
+            xmlns:digit="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tabDigit_ones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            digit:backgroundColor="#000000"
+            digit:padding="10dp"
+            digit:textColor="#ffffff"
+            digit:textSize="60dp" />
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="0dp" />
+
+        <com.xenione.digit.TabDigit
+            xmlns:digit="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tabDigit_zeros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            digit:backgroundColor="#000000"
+            digit:padding="10dp"
+            digit:textColor="#ffffff"
+            digit:textSize="60dp" />
+
+
+    </LinearLayout>
+
     <TextView
         android:text="0"
         android:layout_width="match_parent"
@@ -28,7 +67,8 @@
         android:textStyle="normal|bold"
         android:textAlignment="center"
         android:layout_marginTop="5dp"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:visibility="gone"/>
 
     <View
         android:layout_width="0dp"
@@ -51,8 +91,7 @@
             android:layout_weight="1"
             android:paddingLeft="@dimen/md_4dp_margin"
             android:paddingRight="@dimen/md_4dp_margin"
-            android:textSize="36sp"
-            />
+            android:textSize="36sp" />
 
         <View
             android:layout_width="@dimen/md_10dp_margin"
@@ -69,10 +108,7 @@
             android:layout_weight="1"
             android:paddingLeft="@dimen/md_4dp_margin"
             android:paddingRight="@dimen/md_4dp_margin"
-            android:textSize="36sp"
-            />
-
-
+            android:textSize="36sp" />
 
     </LinearLayout>
 </LinearLayout>
